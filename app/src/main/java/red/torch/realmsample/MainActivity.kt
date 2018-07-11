@@ -8,6 +8,8 @@ import io.realm.RealmConfiguration
 
 class MainActivity : AppCompatActivity() {
 
+    val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,11 +34,11 @@ class MainActivity : AppCompatActivity() {
         friends.add(Friend.of(23, "taro", "Ibaraki", now))
         FriendRepository.getInstance().update(friends)
 
-        Log.w("hasegawo", "start")
+        Log.w(TAG, "start")
 
         val aaa = FriendRepository.getInstance().findAll()
         for (result in aaa) {
-            Log.w("hasegawo", result.toString())
+            Log.w(TAG, result.toString())
         }
 
         val now2 = System.currentTimeMillis()
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         val nga = FriendRepository.getInstance().findAll()
         for (result in nga) {
-            Log.w("hasegawa", result.toString())
+            Log.w(TAG, result.toString())
         }
     }
 }
